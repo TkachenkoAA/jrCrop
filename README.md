@@ -11,7 +11,7 @@ jrCropController - A simple component to crop your images, inspired by whatsapp 
 ### Installation
 
 ```sh
-$ npm i git+https://bitbucket.org/tkachenko_artem/jrcrop --save
+$ npm i git+https://tkachenko_artem@bitbucket.org/tkachenko_artem/jrcrop.git --save
 ```
 ```javascript
 import { jrCropController } from 'jrcrop';
