@@ -11,6 +11,8 @@ jrCropController - A simple component to crop your images, inspired by whatsapp 
 ### Installation
 
 ```sh
+$ npm i @types/hammerjs --save
+$ npm i hammerjs --save
 $ npm i git+https://tkachenko_artem@bitbucket.org/tkachenko_artem/jrcrop.git --save
 ```
 ```javascript
@@ -37,7 +39,7 @@ cropConfig = {
     }
 };
 
-// Open modal 
+// Open modal
 this._modalService.open(this.cropModalPicture).result.then(
     // cropData { cropX, cropY, width, height };
     (cropData) => console.log(cropData),
