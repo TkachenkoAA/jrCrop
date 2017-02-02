@@ -15,6 +15,12 @@ $ npm i @types/hammerjs --save
 $ npm i hammerjs --save
 $ npm i git+https://tkachenko_artem@bitbucket.org/tkachenko_artem/jrcrop.git --save
 ```
+```html
+// index.html
+<script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
+<script src="https://hammerjs.github.io/dist/hammer-time.min.js"></script>
+```
+
 ```javascript
 import { jrCropController } from 'jr-crop';
 
