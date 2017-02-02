@@ -1,0 +1,25 @@
+{
+  "name": "jr-crop",
+  "version": "0.0.1",
+  "description": "jrCropController - A simple component to crop your images.",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/tkachenko_artem/jrcrop.git"
+  },
+  "keywords": [
+    "crop",
+    "image",
+    "crop",
+    "croppper",
+    "hammerjs",
+    "mobile",
+    "crop"
+  ],
+  "author": "Tkachenko Artem",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/tkachenko_artem/jrcrop#readme"
+}
