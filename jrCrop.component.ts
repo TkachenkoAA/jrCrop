@@ -230,7 +230,7 @@ export class jrCropController implements OnInit {
           this.cropBackgroundRight.nativeElement.style.width = `${backWidth}px`;
         }
       })
-      .catch( err => this._modalDismiss(err) );
+      .catch( err => this.errorHandler(err) );
   }
 
   /**
@@ -373,6 +373,9 @@ export class jrCropController implements OnInit {
    * on the server.
    */
   private resolveCropData () {
+    let canvas = document.createElement('canvas');
+    let context = canvas.getContext('2d');
+
     let width = this.options.width / this.scale;
     let height = this.options.height / this.scale;
 
@@ -390,6 +393,8 @@ export class jrCropController implements OnInit {
         cropX = cropX < 0 ? cropX * ( - 1 ) : cropX;
         cropY = cropY < 0 ? cropY * ( - 1 ) : cropY;
 
+    context.drawImage(this.imageEl.nativeElement, sourceX, sourceY);
+
     return {
       cropX,
       cropY,
@@ -397,6 +402,7 @@ export class jrCropController implements OnInit {
       // correctY,
       width,
       height,
+      canvas
       // currWidth,
       // currHeight
     };
@@ -463,8 +469,20 @@ export class jrCropController implements OnInit {
     });
   }
 
+  private errorHandler (error) {
+    if ( this._modalDismiss ) {
+      this._modalDismiss(error)
+    } else {
+      this.onError.emit(error)
+    }
+  }
+
   public getCropData(doneResovleFn: Function){
-    this._modalClose( this.resolveCropData() );
+    if ( this._modalDismiss ) {
+      this._modalDismiss( this.resolveCropData() );
+    } else {
+      return this.resolveCropData();
+    }
   }
 
   ngOnInit (){
@@ -480,7 +498,7 @@ export class jrCropController implements OnInit {
       this.initialize();
     } else {
       // Browser not support requred API
-      this._modalDismiss('The File APIs are not fully supported.');
+      this.errorHandler('The File APIs are not fully supported.');
     }
 
     console.log('jrCrop:', this )
