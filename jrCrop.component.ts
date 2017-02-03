@@ -16,7 +16,6 @@ import {
  ElementRef,
  ViewChild
 } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap/modal/modal.module';
 
 interface defaultOptions {
   width: number;
