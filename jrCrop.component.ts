@@ -392,7 +392,7 @@ export class jrCropController implements OnInit {
         cropX = cropX < 0 ? cropX * ( - 1 ) : cropX;
         cropY = cropY < 0 ? cropY * ( - 1 ) : cropY;
 
-    context.drawImage(this.imageEl.nativeElement, sourceX, sourceY);
+    context.drawImage(this.imageEl.nativeElement, cropX, cropY);
 
     return {
       cropX,
