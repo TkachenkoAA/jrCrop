@@ -25,8 +25,8 @@
     top: 0;
     bottom: 0;
     margin: auto;
-    border-top: 2px solid #fff;
-    border-bottom: 2px solid #fff;
+    // border-top: 2px solid #fff;
+    // border-bottom: 2px solid #fff;
     box-sizing: content-box;
   }
   &-img { max-width: none; }
@@ -34,17 +34,15 @@
     position: fixed;
     background: rgba(0, 0, 0, 0.5);
     z-index: 1;
+    &-horizontal,
     &-vertical {
       border-style: solid;
       border-color: #F8F8F8;
       border-width: 0px;
     }
-    &-horizontal {
-      left: 0;
-      right: 0;
-    }
-    &-top { top: 0; }
-    &-bottom { bottom: 0; }
+    &-horizontal { left: 0; right: 0; }
+    &-top { border-bottom-width: 2px; top: 0; }
+    &-bottom { border-top-width: 2px; bottom: 0; }
     &-left { border-right-width: 2px; left: 0; }
     &-right { border-left-width: 2px; right: 0; }
   }

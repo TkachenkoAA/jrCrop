@@ -217,7 +217,7 @@ export class jrCropController implements OnInit {
           let backHeight = (( window.innerHeight - this.options.template.barHeight - this.options.height ) / 2 ) - 2;
           let backWidth = (( window.innerWidth - this.options.width ) / 2 ) - 2;
           // 2px top/bottom border
-          this.cropBackgroundTop.nativeElement.style.height = `${backHeight}px`;
+          this.cropBackgroundTop.nativeElement.style.height = `${backHeight + 2}px`;
           this.cropBackgroundBot.nativeElement.style.height = `${backHeight}px`;
           // Left
           this.cropBackgroundLeft.nativeElement.style.top = `${backHeight}px`;

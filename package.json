@@ -1,6 +1,6 @@
 {
   "name": "jr-crop",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "jrCropController - A simple component to crop your images.",
   "main": "index.ts",
   "scripts": {
