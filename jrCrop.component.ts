@@ -469,7 +469,7 @@ export class jrCropController implements OnInit {
   }
 
   private errorHandler (error) {
-    if ( this._modalDismiss ) {
+    if ( typeof this._modalDismiss == 'function' ) {
       this._modalDismiss(error)
     } else {
       this.onError.emit(error)
@@ -477,8 +477,8 @@ export class jrCropController implements OnInit {
   }
 
   public getCropData(doneResovleFn: Function){
-    if ( this._modalDismiss ) {
-      this._modalDismiss( this.resolveCropData() );
+    if ( typeof this._modalClose == 'function' ) {
+      this._modalClose( this.resolveCropData() );
     } else {
       return this.resolveCropData();
     }
